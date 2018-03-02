@@ -1,0 +1,47 @@
+<div *ngIf="isViewRequest">
+    <div class="row post-container">
+        <div class="col-lg-2 post-logo-container">
+            <div>{{postContent?.itemName}}</div>
+        </div>
+        <div class="col-lg-7">
+            <p>
+                {{postContent?.data}}
+            </p>
+            <span>
+            {{postContent?.postedTime}}
+            </span>
+        </div>
+        <div class="col-lg-3">
+            <button class="btn btn-info" name="{{'post_'+postContent?._id}}" (click)="updatePost($event)">Update</button>
+            <button class="btn btn-info" name="{{'post_'+postContent?._id}}" (click)="deletePost($event)">Delete</button>
+        </div>
+        </div>
+        <div class="right">
+            <a routerLink="/{{CATEGORY}}">Back</a>
+        </div>
+</div>
+
+<div *ngIf="!isViewRequest" class="fruits-container">
+    <div>
+        {{emptyResponseData}}  <a *ngIf="showAddPostLink" routerLink='/newpost'>Click here</a>
+    </div>
+    <div *ngIf="responseData?.length>0">
+        <div class="row post-container" *ngFor="let item of responseData">
+        <div class="col-lg-2 post-logo-container">
+            <div>{{item.itemName}}</div>
+        </div>
+        <div class="col-lg-7">
+            <p>
+                    {{item.data | limitVisibleContent}} <a *ngIf="item.data.length>200" routerLink='/fruits/{{item._id}}'>Read More...</a>
+            </p>
+            <span>
+                {{item.postedTime}}
+            </span>
+        </div>
+        <div class="col-lg-3">
+                <button class="btn btn-info" name="{{'post_'+item._id}}" (click)="updatePost($event)">Update</button>
+                <button class="btn btn-info" name="{{'post_'+item._id}}" (click)="deletePost($event)">Delete</button>
+        </div>
+        </div>
+    </div>
+</div>

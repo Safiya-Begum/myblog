@@ -1,0 +1,37 @@
+.nav-logo img{
+    width:50px;
+}
+.row {
+    margin-left: 0px;
+}
+#blog-container {
+    min-height: 300px;
+    margin-top:20px;
+    padding-left: 0px;
+}
+
+.right-section {
+    padding-right: 0px;
+}
+
+.right-section img {
+    width:85%;
+}
+
+.about-Site {
+    border:1px solid #ccc;
+    padding-top: 25px;
+    padding-left: 34px;
+    padding-bottom: 25px;
+}
+
+.about-Site h6 {
+    margin-left: 35px;
+}
+
+footer p{
+    margin-top: 30px;
+    border-top: 1px solid #000;
+    text-align: center;
+}
+

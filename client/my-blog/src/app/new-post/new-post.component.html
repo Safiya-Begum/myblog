@@ -1,0 +1,29 @@
+<form #formData='ngForm' (ngSubmit)="onSubmit($event,formData)">
+    <div class="form-group">
+        <label for="postCategories">Select Category</label>
+        <select id="postCategories" class="form-control" name="postCategory" ngModel required>
+          <option value="fruits">Fruits</option>
+          <option value="veggies">Veggies</option>
+          <option value="dryFruits">Dry Fruits</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="itemName">Selected Category Item Name</label>
+      </div>
+    <div class="form-group">
+        <input id="itemName" name="itemName" placeholder="Name of fruit/veggies/...." ngModel required/>
+      </div>
+    <div class="form-group">
+      <label for="postedData">What's on your mind?</label>
+      <textarea class="form-control" rows="3" id="postedData" name="postedData" ngModel required></textarea>
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="postedDate" [ngModel]="currentTimeStamp|date:'short'"/>
+      </div>
+    <div class="form-group">
+        <button class="form-control btn-info">Post</button>
+    </div>
+    <div class="form-group right">
+        <a routerLink="/">Back</a>
+    </div>
+  </form>

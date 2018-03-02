@@ -1,0 +1,47 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand nav-logo" href="#"><img src="../assets/images/logo.jpg" alt="My Blog"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/fruits" routerLinkActive="active">Fruits</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/veggies" routerLinkActive="active">Veggies</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" routerLink="/dryFruits" routerLinkActive="active">Dry Fruits</a>
+            </li>
+            <li class="nav-item add-post">
+                    <a class="nav-link" routerLink="/newpost" routerLinkActive="active">Add new Post</a>
+             </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container" id="blog-container">
+    <div class="row">
+        <div class="col-md-9 blog-content">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-md-3 right-section">
+            <div class="about-Site">
+                <h6>About this Blog!!</h6>
+                <img src="../assets/images/about-site.jpg" alt="About this site"/>
+                <div>
+                    This blog provides basic nutritional benefits of various Fruits, Veggies and dry fruits.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; My blog</p>
+</footer>
