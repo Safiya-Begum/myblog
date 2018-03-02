@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const mongoJS=require('mongojs');
-const dbInstance=mongoJS('mongodb://application:application@ds243798.mlab.com:43798/myblogdata');
+const dbInstance=mongoJS('mongodb://<mlabDBusername>:<mlabDBpassword>@ds243798.mlab.com:43798/myblogdata');
 
 router.get('/',function(req,res){
    res.render(__dirname+'/index.html');
