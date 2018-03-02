@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form>
+            <input type="text" id="postContent"/>
+            <button value="submit" id="submit">Submit</button>
+            <div class="myposts"></div>
+        </form>
+        <script>
+            document.getElementById('submit').addEventListener('click',function(){
+                console.log(document.getElementById('postContent'));
+                var postedData=JSON.stringify({userName:"John",posts:[{postedData:document.getElementById('postContent').value, timestamp:new Date().getTime()}]});
+                fetch('/api/savePost',{
+                    method:'POST',
+                    body:postedData,
+                    headers:{
+                        "Content-Type":"application/json"
+                    }
+                },function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

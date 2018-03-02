@@ -1,0 +1,15 @@
+<form #formData='ngForm' (ngSubmit)="onUpdate($event,formData)">
+  <div class="form-group">
+    <label for="postedData">Update your Post here!</label>
+    <textarea class="form-control" rows="3" id="postedData" name="postedData" [ngModel]='currentPostExistingContent'></textarea>
+  </div>
+  <div class="form-group">
+      <input type="hidden" name="postedDate" [ngModel]="currentTimeStamp|date:'short'"/>
+    </div>
+  <div class="form-group">
+      <button class="form-control btn-info">Update</button>
+  </div>
+  <div class="form-group right">
+      <a routerLink="/{{category}}">Back</a>
+  </div>
+</form>
